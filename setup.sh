@@ -29,7 +29,7 @@ mkdir -p ~/.config/zellij/plugins
 
 echo "Downloading zsm plugin..."
 curl -sL -o ~/.config/zellij/plugins/zsm.wasm \
-  "https://github.com/dj95/zsm/releases/latest/download/zsm.wasm"
+  "https://github.com/liam-mackie/zsm/releases/latest/download/zsm.wasm"
 
 echo "Downloading harpoon plugin..."
 curl -sL -o ~/.config/zellij/plugins/harpoon.wasm \

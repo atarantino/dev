@@ -159,14 +159,14 @@ keybinds clear-defaults=true {
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
         bind "Ctrl q" { Quit; }
-        bind "Ctrl z" { 
-            LaunchOrFocusPlugin "file:/Users/adamtarantino/.config/zellij/plugins/zsm.wasm" {
+        bind "Ctrl z" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zsm.wasm" {
                 floating true
                 move_to_focused_tab true
             }
         }
         bind "Ctrl y" {
-        LaunchOrFocusPlugin "file:/Users/adamtarantino/.config/zellij/plugins/harpoon.wasm" {
+        LaunchOrFocusPlugin "file:~/.config/zellij/plugins/harpoon.wasm" {
             floating true; move_to_focused_tab true;
         }
       }
