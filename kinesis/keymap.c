@@ -1,13 +1,22 @@
 #include QMK_KEYBOARD_H
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0] = LAYOUT(KC_ESC, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_PSCR, KC_SCRL, KC_PAUS, TG(1), QK_BOOT, KC_EQL, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSLS, LCTL_T(KC_CAPS), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, RALT_T(KC_QUOT), KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_GRV, KC_INS, KC_LEFT, KC_RGHT, KC_UP, KC_DOWN, KC_LBRC, KC_RBRC, KC_LALT, OSM(MOD_MEH), KC_RCTL, KC_RGUI, KC_HOME, KC_PGUP, KC_BSPC, KC_DEL, KC_END, MEH_T(KC_PGDN), KC_ENT, RCTL_T(KC_SPC)),
+    [0] = LAYOUT(KC_ESC, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_PSCR, KC_SCRL, TG(2), TG(1), QK_BOOT, KC_EQL, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSLS, LCTL_T(KC_CAPS), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, RALT_T(KC_QUOT), KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_GRV, KC_INS, KC_LEFT, KC_RGHT, KC_UP, KC_DOWN, KC_LBRC, KC_RBRC, KC_LALT, OSM(MOD_MEH), KC_RCTL, KC_RGUI, KC_HOME, KC_PGUP, KC_BSPC, KC_DEL, KC_END, MEH_T(KC_PGDN), KC_ENT, RCTL_T(KC_SPC)),
 
     // Layer 1: left-hand Excalidraw layer (pen in right hand). Num LED lights while active.
     //   1-5 stay native (select/rect/diamond/ellipse/arrow), Q-T give tools 6-0
     //   (line/draw/text/image/eraser), Tab = hand tool, B = lock tool,
     //   F1/F2 = zoom out/in, F3 = zoom to fit, Backspace thumb = Space for panning.
-    [1] = LAYOUT(_______, C(KC_MINS), C(KC_EQL), S(KC_1), _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, TG(1), _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_H, KC_6, KC_7, KC_8, KC_9, KC_0, _______, _______, _______, _______, _______, _______, _______, C(KC_Z), S(C(KC_Z)), KC_DEL, C(KC_D), C(KC_G), _______, _______, _______, _______, _______, _______, _______, C(KC_Z), C(KC_X), C(KC_C), C(KC_V), KC_Q, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_SPC, _______, _______, _______, _______, _______)
+    [1] = LAYOUT(_______, C(KC_MINS), C(KC_EQL), S(KC_1), _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, XXXXXXX, TG(1), _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_H, KC_6, KC_7, KC_8, KC_9, KC_0, _______, _______, _______, _______, _______, _______, _______, C(KC_Z), S(C(KC_Z)), KC_DEL, C(KC_D), C(KC_G), _______, _______, _______, _______, _______, _______, _______, C(KC_Z), C(KC_X), C(KC_C), C(KC_V), KC_Q, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_SPC, _______, _______, _______, _______, _______),
+
+    // Layer 2: left-hand Lucidspark/Lucidchart layer, toggled by the Pause key
+    // (Scroll LED lights while active). Same philosophy as layer 1:
+    //   1-5 = select/shape/oval/frame/eraser, Q-T = sticky/pen/text/rect/line,
+    //   Tab = pan tool, home row = undo/redo/delete/duplicate/group,
+    //   ZXCV = undo/cut/copy/paste, B = select all, F1/F2 = zoom out/in,
+    //   F3 = zoom to default, Backspace thumb = Space for panning.
+    // Keypad key is disabled here so the two drawing layers can't stack.
+    [2] = LAYOUT(_______, C(KC_MINS), C(KC_EQL), C(KC_0), _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, TG(2), XXXXXXX, _______, _______, KC_V, KC_S, KC_O, KC_F, KC_E, _______, _______, _______, _______, _______, _______, KC_H, KC_N, KC_P, KC_T, KC_R, KC_L, _______, _______, _______, _______, _______, _______, _______, C(KC_Z), C(KC_Y), KC_DEL, C(KC_D), C(KC_G), _______, _______, _______, _______, _______, _______, _______, C(KC_Z), C(KC_X), C(KC_C), C(KC_V), C(KC_A), _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_SPC, _______, _______, _______, _______, _______)
 };
 
 // Caps Lock LED still tracks host caps lock; returning false keeps the host

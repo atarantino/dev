@@ -18,10 +18,20 @@ Keymap `tiny` for `kinesis/kint2pp` (stapelberg kinT controller, Teensy++ 2.0 / 
   - `Z X C V` → undo / cut / copy / paste
   - `F1/F2` zoom out/in, `F3` zoom to fit
   - Backspace thumb → `Space` (hold to pan)
+- **Layer 2** — left-hand Lucidspark/Lucidchart layer, toggled by the **Pause** key (`TG(2)`). The **Scroll Lock LED lights while active**. Same physical philosophy as layer 1:
+  - Number row `1–5` → `V S O F E` (select / shape / oval / frame / eraser)
+  - `Q W E R T` → `N P T R L` (sticky note / pen / text / rectangle / line)
+  - `Tab` → `H` (pan tool)
+  - `A` undo, `S` redo (Ctrl+Y), `D` delete, `F` duplicate, `G` group
+  - `Z X C V` → undo / cut / copy / paste, `B` → select all
+  - `F1/F2` zoom out/in, `F3` zoom to default (Ctrl+0)
+  - Backspace thumb → `Space` (hold to pan)
+
+The two drawing layers can't stack: each layer disables the other layer's toggle key while active.
 
 ## LED indicators
 
-Caps LED = real host caps lock. Num = layer 1, Scroll = layer 2, Keypad = layer 3 (layers 2–3 not yet defined). Host lock-state updates for the three layer LEDs are blocked in `led_update_user`.
+Caps LED = real host caps lock. Num = layer 1, Scroll = layer 2, Keypad = layer 3 (layer 3 not yet defined). Host lock-state updates for the three layer LEDs are blocked in `led_update_user`.
 
 ## Build (Docker, no local toolchain)
 
